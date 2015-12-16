@@ -1,0 +1,2 @@
+ * Check paas type, check for supported type
+ * Implement htaccess modification (<Location /.well-known/>RewriteEngine Off</Location>)
