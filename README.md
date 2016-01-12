@@ -13,7 +13,7 @@ Obtain certificates from [Let's Encrypt](https://letsencrypt.org/) and use them 
 * Enter the directory and use the `pip` executable distributed with `letsencrypt` to install the plugin
 
 ```
-~ $ git clone <url>
+~ $ git clone git@github.com:Gandi/letsencrypt-gandi.git
 ~ $ cd letsencrypt-gandi
 ~/letsencrypt-gandi $ ~/.local/share/letsencrypt/bin/pip install -e .
 ```
@@ -124,5 +124,5 @@ Make sure you can connect via sftp from your terminal and try again. If the conn
 
 ### Other issues
 
-You can also check previously reported [Issues](issues/) or create a new one if you need any help.
+You can also check previously reported [Issues](https://github.com/Gandi/letsencrypt-gandi/issues/) or create a new one if you need any help.
 
