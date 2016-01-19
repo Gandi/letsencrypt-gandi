@@ -27,6 +27,7 @@ Obtain certificates from [Let's Encrypt](https://letsencrypt.org/) and use them 
 * You must have a ["M"-sized (or greater) Simple Hosting instance](https://www.gandi.net/hosting/simple/power) to enable SSL
 * You must [add the certificate's domain name to your instance's VHOSTS](https://wiki.gandi.net/simple/shs-dns_config)
 * You need to have [SSH Key authentication](https://wiki.gandi.net/en/simple/ssh_key) setup on the Simple Hosting instance
+* Your SSH Key must be added to your local `ssh-agent` (use `ssh-add /path/to/key` to add it)
 
 #### Limitations
 
@@ -50,6 +51,20 @@ Run the following command from your computer and make sure you replace the place
 ```
 
 Simply follow the steps presented on the screen to complete the process.
+
+#### Troubleshooting
+
+##### Authentication issues
+
+If you experience authentication issues, make sure you can connect to the instance via `sftp` from your terminal with your SSH Key and without a password.
+
+If the connection via `sftp` works, but the script still has authentication issues, make sure you have added your SSH Key to `ssh-agent` on your computer (see the Requirements section for instructions).
+
+In case everything seems to be set correctly, but the script is still not able to authenticate, try to run the above commands with `sudo` and re-run the script.
+
+##### Other issues
+
+You can also check previously reported [Issues](https://github.com/Gandi/letsencrypt-gandi/issues/) or create a new one if you need any help.
 
 ### Other products
 
@@ -96,10 +111,9 @@ To only install the certs downloaded to your computer on Simple hosting, you can
 
 ### Debugging
 
-```
-
 With the following additional flags, you'll be able to use LE's staging server and control where your local files are kept. The log file created in `~/.letsencrypt/letsencrypt.log` may contain more information about your problem.
 
+```
 ~/letsencrypt $ ./letsencrypt-auto --config-dir $HOME/.letsencrypt \
             --work-dir $HOME/.letsencrypt \
             --logs-dir $HOME/.letsencrypt \
@@ -111,18 +125,3 @@ With the following additional flags, you'll be able to use LE's staging server a
                 --letsencrypt-gandi:gandi-shs-api-key API-KEY \
             --installer letsencrypt-gandi:gandi-shs
 ```
-
-## Troubleshooting
-
-Take a look at the Development / Advanced section, namely the Debugging paragraph, to see if you identify the problem and the solution. 
-
-### Instance authentication issues
-
-If you experience authentication issues, make sure you have added your ssh key to the instance and that your key was added to ssh-agent. 
-
-Make sure you can connect via sftp from your terminal and try again. If the connection via sftp works but the script still has authentication issues, make sure that the script is trying to use the correct ssh config, namely the correct key and the correct known_hosts file.
-
-### Other issues
-
-You can also check previously reported [Issues](https://github.com/Gandi/letsencrypt-gandi/issues/) or create a new one if you need any help.
-
