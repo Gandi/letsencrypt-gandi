@@ -13,7 +13,7 @@ Obtain certificates from [Let's Encrypt](https://letsencrypt.org/) and use them 
 * Enter the directory and use the `pip` executable distributed with `letsencrypt` to install the plugin
 
 ```
-~ $ git clone git@github.com:Gandi/letsencrypt-gandi.git
+~ $ git clone https://github.com/Gandi/letsencrypt-gandi.git
 ~ $ cd letsencrypt-gandi
 ~/letsencrypt-gandi $ ~/.local/share/letsencrypt/bin/pip install -e .
 ```
