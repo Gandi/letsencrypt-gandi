@@ -10,11 +10,16 @@ import subprocess
 import zope.interface
 
 from acme import challenges
+try:
+    from letsencrypt import errors
+    from letsencrypt import interfaces
 
-from letsencrypt import errors
-from letsencrypt import interfaces
+    from letsencrypt.plugins import common
+except ImportError:
+    from certbot import errors
+    from certbot import interfaces
 
-from letsencrypt.plugins import common
+    from certbot.plugins import common
 
 logger = logging.getLogger(__name__)
 
