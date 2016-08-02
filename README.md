@@ -35,7 +35,7 @@ Obtain certificates from [Let's Encrypt](https://letsencrypt.org/) and use them 
 
 ##### Limitations of Python instances
 
-Python applications are handled through a [WSGI application in Gandi](https://wiki.gandi.net/en/simple/instance/python) so to get this plugin to worki, you need to configure your application to serve a directory called **.well-known** staticaly from the application folder.
+Python applications are handled through a [WSGI application in Gandi](https://wiki.gandi.net/en/simple/instance/python) so to get this plugin to work, you need to configure your application to serve a directory called **.well-known** staticaly from the application folder.
 
 If you are using Django, you can get this adding this line to your **urls.py** file:
 
