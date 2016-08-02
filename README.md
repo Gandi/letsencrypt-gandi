@@ -31,7 +31,20 @@ Obtain certificates from [Let's Encrypt](https://letsencrypt.org/) and use them 
 
 #### Limitations
 
-* Currently, **only PHP and Ruby instances are supported** by the plugin. Node.js and Python instances are not yet supported by the plugin, but you can refer to [this tutorial  for a walkthrough](https://wiki.gandi.net/tutorials/letsencrypt).
+* Currently, **only PHP, Ruby and Python instances are supported** by the plugin. Node.js instances are not yet supported by the plugin, but you can refer to [this tutorial  for a walkthrough](https://wiki.gandi.net/tutorials/letsencrypt).
+
+##### Limitations of Python instances
+
+Python applications are handled through a [WSGI application in Gandi](https://wiki.gandi.net/en/simple/instance/python) so to get this plugin to worki, you need to configure your application to serve a directory called **.well-known** staticaly from the application folder.
+
+If you are using Django, you can get this adding this line to your **urls.py** file:
+
+```python
+    url(r'^\.well-known/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '.well-known'}),
+```
+
+After doing that in your application and deploying it to gandi, you can use this plugin to get and deploy a letsencrypt
+certificate.
 
 #### Instructions
 

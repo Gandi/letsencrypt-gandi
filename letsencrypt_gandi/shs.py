@@ -127,7 +127,7 @@ class GandiSHSConfigurator(common.Plugin):
 
         self.vhost = self.conf('vhost')
 
-        if not re.match('^(php|ruby)', self.shs_info['type']):
+        if not re.match('^(php|ruby|python)', self.shs_info['type']):
             raise errors.PluginError(
                 "Sorry, only php and ruby instances are supported for now, "
                 "we're doing our best to get everything supported with "
@@ -200,7 +200,8 @@ class GandiSHSConfigurator(common.Plugin):
     def _base_path(self):
         if re.match('^php', self.shs_info['type']):
             return 'vhosts/{vhost}/htdocs/'.format(vhost=self.vhost)
-
+        elif re.match('^python', self.shs_info['type']):
+            return 'vhosts/default'
         # if ruby
         return 'vhosts/default/public'
 
