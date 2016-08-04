@@ -55,7 +55,7 @@ If you installed **certbot** using the [Homebrew](http://brew.sh) package manage
 First, locate the correct directory **certbot** by reading the `PYTHONPATH` environment variable included in the executable.
 
 ```
-$ cat $(which cerbot) | grep PYTHONPATH
+$ cat $(which certbot) | grep PYTHONPATH
 PYTHONPATH="/usr/local/Cellar/certbot/0.8.0/libexec/lib/python2.7/site-packages:/usr/local/Cellar/certbot/0.8.0/libexec/vendor/lib/python2.7/site-packages" exec "/usr/local/Cellar/certbot/0.8.0/libexec/bin/certbot" "$@"
 ```
 
