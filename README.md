@@ -197,6 +197,7 @@ $ certbot --config-dir ~/some/path \
           -- work-dir ~/some/other/path \
           -- log-dir ~/yet/another/path \
           ...
+```
 
 More information can be found in [certbot's documentation](https://certbot.eff.org/docs/using.html#system-requirements).
 
@@ -215,6 +216,7 @@ $ [sudo] certbot certonly --domains VHOST \
 ### `install` command
 
 To only install the certs downloaded to your computer on Simple hosting, you can use the `install` command and the `letsencrypt-gandi:gandi-shs` installer.
+
 
 ```
 $ [sudo] certbot install --domains VHOST \
