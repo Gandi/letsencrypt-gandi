@@ -98,6 +98,7 @@ If the plugin was correctly installed, you can proceed to using it.
 * You must [add the certificate's domain name to your instance's VHOSTS](https://wiki.gandi.net/simple/shs-dns_config)
 * You need to have [SSH Key authentication](https://wiki.gandi.net/en/simple/ssh_key) setup on the Simple Hosting instance
 * Your SSH Key must be added to your local `ssh-agent` (use `ssh-add /path/to/key` to add it)
+* The RSA key for certificates to be used with Simple Hosting can only be of 2048 bits.
 
 #### Limitations
 
