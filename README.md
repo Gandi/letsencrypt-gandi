@@ -102,9 +102,10 @@ If the plugin was correctly installed, you can proceed to using it.
 
 #### Limitations
 
-* Currently, **only PHP, Ruby and Python instances are supported** by the plugin. Node.js instances are not yet supported by the plugin, but you can refer to [our tutorial  for a walkthrough](https://wiki.gandi.net/tutorials/letsencrypt).
+* Currently, only PHP and Ruby instances will work without modification of your code (in most cases). Simply follow the instructions and the plugin will take care of obtaining and installing the certificates for you.
+* Python and Node.js instance users must add a special route to their application prior to using the plugin (examples provided below)
 
-##### Limitations of Python instances
+##### Python instances
 
 Python applications are handled through a [WSGI application in Gandi](https://wiki.gandi.net/en/simple/instance/python) so to get this plugin to work, you need to configure your application to serve a directory called `.well-known` statically from the application folder.
 
@@ -115,6 +116,19 @@ If you are using Django, you can do this by adding a route to your **urls.py** f
 ```
 
 After doing that, deploy your application to your Simple Hosting instance and use this plugin to obtain and install a certificate.
+
+##### Node.js instances
+
+To use this plugin with Node.js applications, you will have to create a special route to serve static files from a directory called `.well-know`.
+
+For example, if you're using the Express framework :
+
+```javascript
+app.use(express.static('.well-known'));
+
+```
+
+Once you have added the route to the application, deploy it to your Simple Hosting instance before following the rest of the instructions. 
 
 #### Instructions
 
