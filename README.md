@@ -119,7 +119,7 @@ After doing that, deploy your application to your Simple Hosting instance and us
 
 ##### Node.js instances
 
-To use this plugin with Node.js applications, you will have to create a special route to serve static files from a directory called `.well-know`.
+To use this plugin with Node.js applications, you will have to create a special route to serve static files from a directory called `.well-known`.
 
 For example, if you're using the Express framework :
 
