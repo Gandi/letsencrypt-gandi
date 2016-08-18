@@ -4,7 +4,7 @@
 
 ## Requirements
 
-* [**certbot**](https://https://certbot.eff.org/) installed on your computer
+* [**certbot**](https://certbot.eff.org/) installed on your computer
 * A [Gandi API Key](https://wiki.gandi.net/xml-api/activate), which you can get from your [Gandi Account](https://www.gandi.net/admin/api_key)
 * Root privileges may be required to use **certbot** on your system (read the "Avoiding sudo" section to try to work around this limitation).
 
