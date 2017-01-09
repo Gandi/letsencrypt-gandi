@@ -74,6 +74,13 @@ Now you'll need to run `python setup.py install --install-purelib /path/that/you
 ~/letsencrypt-gandi $ PYTHONPATH=$CERTBOT_LIB python setup.py install --install-purelib $CERTBOT_LIB
 ```
 
+Keep in mind that every time certbot is upgraded by Homebrew, the plugin needs to be reinstalled. As of version 0.9.3 of certbot, you can just execute the command again after replacing the correct version number to the path. Replace 'CERTBOT_VERSION_NUMBER' with the number of the last version installed by Homebrew on your system (for example '0.9.3').
+
+```
+~/letsencrypt-gandi $ export CERTBOT_LIB="/usr/local/Cellar/certbot/CERTBOT_VERSION_NUMBER/libexec/lib/python2.7/site-packages"
+~/letsencrypt-gandi $ PYTHONPATH=$CERTBOT_LIB python setup.py install --install-purelib $CERTBOT_LIB
+```
+
 ## Usage
 
 You'll be able to tell whether the plugin was successfully installed by running the `certbot plugins` command and looking for `letsencrypt-gandi` in the  output, as in the following example:
