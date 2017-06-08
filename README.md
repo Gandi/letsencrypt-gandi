@@ -241,8 +241,9 @@ To only install the certs downloaded to your computer on Simple hosting, you can
 
 ```
 $ [sudo] certbot install --domains VHOST \
-            --cert-path /path/to/cert
-            --installer letsencrypt-gandi:gandi-shs \
+              --cert-path /path/to/cert \
+              --key-path /path/to/cert \
+              --installer letsencrypt-gandi:gandi-shs \
               --letsencrypt-gandi:gandi-shs-name SHS-NAME \
               --letsencrypt-gandi:gandi-shs-vhost VHOST \
               --letsencrypt-gandi:gandi-shs-api-key API-KEY \
