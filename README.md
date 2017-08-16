@@ -214,9 +214,9 @@ You can work around this requirement by specifiying different paths than the one
 For example:
 
 ```
-$ certbot --config-dir ~/some/path \
-          -- work-dir ~/some/other/path \
-          -- log-dir ~/yet/another/path \
+$ certbot --config-dir ~/.letsencrypt \
+          --work-dir ~/.letsencrypt \
+          --logs-dir ~/.letsencrypt/logs \
           ...
 ```
 
