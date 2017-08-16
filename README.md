@@ -52,16 +52,11 @@ Note that the `.` at the end of `pip install -e .` command is important.
 
 If you installed **certbot** using the [Homebrew](http://brew.sh) package manager on Mac OS X, you'll need to run some (ugly) commands to install the plugin inside the correct directory.
 
-First, locate the correct directory **certbot** by reading the `PYTHONPATH` environment variable included in the executable.
+First, locate the correct directory **certbot**.  The path we're looking for is
+the one that includes the `libexec/` folder:
 
 ```
-$ cat $(which certbot) | grep PYTHONPATH
-PYTHONPATH="/usr/local/Cellar/certbot/0.8.0/libexec/lib/python2.7/site-packages:/usr/local/Cellar/certbot/0.8.0/libexec/vendor/lib/python2.7/site-packages" exec "/usr/local/Cellar/certbot/0.8.0/libexec/bin/certbot" "$@"
-```
-
-The path we're looking for is the one that includes the `libexec/` folder. In the example above, the path is:
-
-```
+$ find /usr/local/Cellar/certbot -name site-packages
 /usr/local/Cellar/certbot/0.8.0/libexec/lib/python2.7/site-packages
 ```
 
