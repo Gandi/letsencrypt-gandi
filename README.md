@@ -135,15 +135,7 @@ $ [sudo] certbot run --domains VHOST \
 Simply follow the steps presented on the screen to complete the process.
 
 
-For certificate **renewal** execute the same command, but change the option 'run' to 'certonly':
-```
-$ [sudo] certbot certonly --domains VHOST \
-            --authenticator letsencrypt-gandi:gandi-shs \
-                --letsencrypt-gandi:gandi-shs-name SHS-NAME \
-                --letsencrypt-gandi:gandi-shs-vhost VHOST \
-                --letsencrypt-gandi:gandi-shs-api-key API-KEY \
-            --installer letsencrypt-gandi:gandi-shs
-```
+For certificate **renewal** and installation execute the same command.
 
 #### Scripting 
 
