@@ -1,3 +1,7 @@
+# Deprecated
+
+This plugin is no longer maintained. Gandi offers an free automated certificates for all simplehosting plans having ssl in the admin interface. This certificate is also auto-renewed automatically.
+
 # Let's Encrypt Gandi Plugin
 
 **letsencrypt-gandi** is a plugin for [certbot](https://certbot.eff.org/) that allows you to obtain certificates from [Let's Encrypt](https://letsencrypt.org/) and use them with [Gandi](https://www.gandi.net) products such as [Simple Hosting](https://gandi.net/hosting/simple).
